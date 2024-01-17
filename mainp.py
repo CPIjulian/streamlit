@@ -208,7 +208,7 @@ with st.sidebar.expander("🗺 Datos", expanded=True):
     - Fecha actual de la información presupuestaria: (dd/mm/aa) 
         """)
 st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_funcs.keys())
-#page_names_to_funcs[demo_name]()
+page_names_to_funcs[demo_name]()
 
 contrasena_correcta = "CPI"
 
