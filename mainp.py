@@ -188,16 +188,9 @@ def Inicio():
 page_names_to_funcs = {
 
     "Inicio": Inicio   
-    #"Interna": Interna
+    "Interna": Interna
 }
-#st.markdown("""
-#<style>
-#    [data-testid=stSidebar] {
-#        background-color: #020f69;
-#        text-color: #ffffff;
-#    }
-#</style>
-#""", unsafe_allow_html=True)
+
 
 st.sidebar.image('logo GadPP.png', caption='Unidad de Planificación')
 st.sidebar.title("Reformas:")
