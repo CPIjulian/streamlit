@@ -28,6 +28,7 @@ def Inicio():
         sticky_mode='pinned',
         override_theme={'menu_background': '#4c00a5'}
     ))
+  
     st.header("**📖 Información general de la Aplicación para realizar reformas**")
     st.markdown("""
                     
@@ -200,15 +201,14 @@ page_names_to_funcs = {
 st.sidebar.image('logo GadPP.png', caption='Unidad de Planificación')
 st.sidebar.title("Reformas:")
 
-
+st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_funcs.keys())
+page_names_to_funcs[demo_name]()
 
 with st.sidebar.expander("🗺 Datos", expanded=True):
     st.markdown(f"""
     - La información del `presupuesto` se actualiza cada día a las 10 de la mañana.
     - Fecha actual de la información presupuestaria: (dd/mm/aa) 
         """)
-st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_funcs.keys())
-page_names_to_funcs[demo_name]()
 
 contrasena_correcta = "CPI"
 
