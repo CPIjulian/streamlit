@@ -188,6 +188,7 @@ def Interna():
     ))
     
 
+
 page_names_to_funcs = {
 
     "Inicio": Inicio,   
@@ -197,8 +198,8 @@ page_names_to_funcs = {
 
 st.sidebar.image('logo GadPP.png', caption='Unidad de Planificación')
 st.sidebar.title("Reformas:")
-demo_name = st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_funcs.keys())
-page_names_to_funcs[demo_name]()
+#demo_name = st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_funcs.keys())
+#page_names_to_funcs[demo_name]()
 
 
 with st.sidebar.expander("🗺 Datos", expanded=True):
