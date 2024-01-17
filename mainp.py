@@ -1,9 +1,10 @@
+pip.main(["install", "hydralit"])
 import os
 import streamlit as st
 import pandas as pd
 import hydralit_components as hc
 import pip
-pip.main(["install", "openpyxl"])
+
 
 st.set_page_config(page_title= 'Reformas CPI',
                     page_icon='moneybag:',
