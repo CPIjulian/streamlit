@@ -8,21 +8,7 @@ st.set_page_config(page_title= 'Reformas CPI',
                     page_icon='moneybag:',
                     layout='wide' )
 
-#@st.cache_data()
-def create_download_link(val, filename):
-    b64 = base64.b64encode(val)  
-    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="{filename}.pdf">Download file</a>'
 
-# Para la seccion 1 y 2
-def agregar_columnas(df):
-    df['Movimiento'] = 0
-    df['TOTAL'] = df['Codificado'] + df['Movimiento']
-    return df
-# Para la seccion 2 segunda tabla
-def agregar_column(dfd):
-    dfd['Movimiento'] = 0
-    dfd['TOTAL'] = dfd['Codificado'] + dfd['Movimiento']
-    return dfd
 
 def Inicio():
     st.markdown("<h1 style='text-align: center; background-color: #000045; color: #ece5f6'>Unidad DE PLANIFICACIÓN</h1>", unsafe_allow_html=True)
@@ -183,6 +169,23 @@ def Inicio():
                 - El boton de guardar información se activara si todo el proceso se encuentra bien realizado caso contrario no se podra descargar la informacion de los datos modificados.
                 - Se descarga un archivo pdf del movimiento del presupuesto y de los cambios de las metas, si el documento se encuentra vacio es decir, que no se a realizado cambios sea en el presupuesto o en las metas.
                 """)
+def Inicio():
+    st.markdown("<h1 style='text-align: center; background-color: #000045; color: #ece5f6'>Unidad DE PLANIFICACIÓN</h1>", unsafe_allow_html=True)
+    st.markdown("<h4 style='text-align: center; background-color: #000045; color: #ece5f6'>Sistema de reformas</h4>", unsafe_allow_html=True)
+    menu_data = [
+    {'id': 1, 'label': "Información", 'key': "md_how_to", 'icon': "fa fa-home"},
+    {'id': 2, 'label': "Documentación", 'key': "md_run_analysis"}
+    #{'id': 3, 'label': "Document Collection", 'key': "md_document_collection"},
+    #{'id': 4, 'label': "Semantic Q&A", 'key': "md_rag"}
+    ]
+
+    int(hc.nav_bar(
+        menu_definition=menu_data,
+        hide_streamlit_markers=False,
+        sticky_nav=True,
+        sticky_mode='pinned',
+        override_theme={'menu_background': '#4c00a5'}
+    ))
     
 
 page_names_to_funcs = {
