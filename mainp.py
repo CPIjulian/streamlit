@@ -1,9 +1,10 @@
+import pip
 pip.main(["install", "hydralit"])
 import os
 import streamlit as st
 import pandas as pd
 import hydralit_components as hc
-import pip
+
 
 
 st.set_page_config(page_title= 'Reformas CPI',
