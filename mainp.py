@@ -200,13 +200,7 @@ page_names_to_funcs = {
 #""", unsafe_allow_html=True)
 
 
-odoo = pd.read_excel("tabla_presupuesto.xlsx")        
-df_odoo = pd.DataFrame(odoo)
-FECHA = df_odoo.iloc[2]["Fecha"]
-st.sidebar.image('logo GadPP.png', caption='Unidad de Planificación')
-st.sidebar.title("Reformas:")
-demo_name = st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_funcs.keys())
-page_names_to_funcs[demo_name]()
+
 
 with st.sidebar.expander("🗺 Datos", expanded=True):
     st.markdown(f"""
