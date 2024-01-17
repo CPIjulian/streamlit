@@ -190,7 +190,7 @@ def Inicio():
 
 page_names_to_funcs = {
 
-    "Inicio": Inicio   
+    "Inicio": Inicio,   
     "Interna": Interna
 }
 
