@@ -201,7 +201,7 @@ demo_name = st.sidebar.selectbox('Escoja el tipo de Reforma', page_names_to_func
 page_names_to_funcs[demo_name]()
 
 
-with st.sidebar.expander("🗺 Datos", expanded=True):
+st.sidebar.expander("🗺 Datos", expanded=True):
     st.markdown(f"""
     - La información del `presupuesto` se actualiza cada día a las 10 de la mañana.
     - Fecha actual de la información presupuestaria: (dd/mm/aa) 
