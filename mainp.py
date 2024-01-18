@@ -230,7 +230,7 @@ def Interna():
         with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
             # Write each dataframe to a different worksheet.
             df1.to_excel(writer, sheet_name='Sheet1', index=False)
-        
+            writer.save()
             download2 = st.download_button(
                 label="Download data as Excel",
                 data=buffer,
