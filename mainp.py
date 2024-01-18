@@ -6,7 +6,7 @@ pip.main(["install", "hydralit"])
 pip.main(["install", "openpyxl"])
 import hydralit_components as hc
 import io
-from xlsxwriter import Workbook
+from xlsxwriter import ExcelWriter
 
 st.set_page_config(page_title= 'Reformas CPI',
                     page_icon='moneybag:',
