@@ -191,15 +191,9 @@ def Interna():
 
     def main():
         st.title("Cargar Archivo Excel en Streamlit")
-    
-        # Widget de carga de archivos
-        uploaded_file = st.file_uploader("tabla_presupuesto.xlsx", type=["xlsx", "xls"])
-    
-        if uploaded_file is not None:
-            # Leer el archivo Excel y mostrar los datos
-            df = pd.read_excel(uploaded_file, engine='openpyxl')
-            st.write("Datos del archivo:")
-            st.write(df)
+        df = pd.read_excel("tabla_presupuesto.xlsx", engine='openpyxl')
+        st.write("Datos del archivo:")
+        st.write(df)
     
     if __name__ == "__main__":
         main()
