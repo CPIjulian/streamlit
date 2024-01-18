@@ -195,11 +195,17 @@ def Interna():
         st.write("Datos del archivo:")
         st.write(df)
         #csv = convert_df(df)
+        @st.experimental_memo
+        def convert_df(df):
+           return df.to_xlsx(index=False).encode('utf-8')
+        
+        xlsx = convert_df(df)
+        
         st.download_button(
            "Press to Download",
-           df,
+           xlsx,
            "file.xlsx",
-           key='download-csv'
+           key='download-xlsx'
         )
     
     if __name__ == "__main__":
