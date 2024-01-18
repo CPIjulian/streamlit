@@ -199,11 +199,9 @@ def Interna():
         def convert_df(df):
            return df.to_xlsx(index=False).encode('utf-8')
         
-        xlsx = convert_df(df)
-        
         st.download_button(
            "Press to Download",
-           xlsx,
+           df,
            "file.xlsx",
            key='download-xlsx'
         )
