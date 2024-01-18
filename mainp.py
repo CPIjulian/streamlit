@@ -195,11 +195,7 @@ def Interna():
         st.write("Datos del archivo:")
         st.write(df)
         
-        st.download_button(
-           "Press to Download",
-           df,
-           "file.xlsx"
-        )
+        st.download_button('Download xlsx', df)
     
     if __name__ == "__main__":
         main()
