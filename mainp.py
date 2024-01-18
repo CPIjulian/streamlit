@@ -229,7 +229,7 @@ def Interna():
         # download button 2 to download dataframe as xlsx
         with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
             # Write each dataframe to a different worksheet.
-            df1.writer.save().to_excel(writer, sheet_name='Sheet1', index=False)
+            df1.to_excel(writer, sheet_name='Sheet1', index=False)
         
             download2 = st.download_button(
                 label="Download data as Excel",
