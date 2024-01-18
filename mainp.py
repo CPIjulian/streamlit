@@ -227,13 +227,13 @@ def Interna():
         )
         
         # download button 2 to download dataframe as xlsx
-        with pd.ExcelWriter(df1, engine='xlsxwriter') as writer:
+        with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
             # Write each dataframe to a different worksheet.
             df.to_excel(writer, sheet_name='Sheet1', index=False)
         
             download2 = st.download_button(
                 label="Download data as Excel",
-                data=df1,
+                data=buffer,
                 file_name='large_df.xlsx',
                 mime='application/vnd.ms-excel'
             )
