@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import pip
 pip.main(["install", "hydralit"])
+pip.main(["install", "openpyxl"])
 import hydralit_components as hc
 import io
 
