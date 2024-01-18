@@ -235,7 +235,7 @@ def Interna():
                 label="Download data as Excel",
                 data=buffer,
                 file_name='large_df.xlsx',
-                mime='application/vnd.ms-excel'
+                mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
             )
       
     
