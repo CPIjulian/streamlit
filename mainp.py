@@ -6,7 +6,6 @@ pip.main(["install", "hydralit"])
 pip.main(["install", "openpyxl"])
 import hydralit_components as hc
 import io
-from xlsxwriter import ExcelWriter
 
 st.set_page_config(page_title= 'Reformas CPI',
                     page_icon='moneybag:',
@@ -198,9 +197,6 @@ def Interna():
         st.write("Datos del archivo:")
         st.write(df)
         
-      
-        
-        
         # buffer to use for excel writer
         buffer = io.BytesIO()
         
@@ -210,17 +206,17 @@ def Interna():
             "random1": [5, 12, 1],
             "random2": [230, 23, 1]
         }
-        df = pd.DataFrame(data)
+        df1 = pd.DataFrame(data)
         
         @st.cache
-        def convert_to_csv(df):
+        def convert_to_csv(df1):
             # IMPORTANT: Cache the conversion to prevent computation on every rerun
             return df.to_csv(index=False).encode('utf-8')
         
-        csv = convert_to_csv(df)
+        csv = convert_to_csv(df1)
         
         # display the dataframe on streamlit app
-        st.write(df)
+        st.write(df1)
         
         # download button 1 to download dataframe as csv
         download1 = st.download_button(
