@@ -199,9 +199,9 @@ def Interna():
         
         def descargar_xlsx():
             # Guardar el DataFrame en un archivo XLSX
-            df.to_excel('archivo_excel.xlsx', index=False)
+            df.to_excel('arc.xlsx', index=False)
             # Devolver el contenido del archivo como bytes
-            with open('archivo_excel.xlsx', 'rb') as f:
+            with open('arc.xlsx', 'rb') as f:
                 return f.read()
         
         # Botón de descarga
