@@ -194,16 +194,11 @@ def Interna():
         df = pd.read_excel("tabla_presupuesto.xlsx", engine='openpyxl')
         st.write("Datos del archivo:")
         st.write(df)
-        #csv = convert_df(df)
-        @st.experimental_memo
-        def convert_df(df):
-           return df.to_xlsx(index=False).encode('utf-8')
         
         st.download_button(
            "Press to Download",
            df,
-           "file.xlsx",
-           key='download-xlsx'
+           "file.xlsx"
         )
     
     if __name__ == "__main__":
