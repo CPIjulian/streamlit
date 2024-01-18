@@ -234,8 +234,8 @@ def Interna():
             download2 = st.download_button(
                 label="Download data as Excel",
                 data=buffer,
-                file_name='large_df.xlsx',
-                mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                file_name='large_df.xls',
+                mime = 'application/vnd.ms-excel'
             )
       
     
