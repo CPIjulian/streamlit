@@ -220,7 +220,7 @@ def Interna():
             archivo_xlsx = descargar_xlsx(df1, df2)
             st.download_button(
                 label="Haz clic para descargar",
-                data=archivo_xlsx.read(),
+                data=archivo_xlsx,
                 key="archivo_xlsx",
                 file_name="archivo_excel.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
