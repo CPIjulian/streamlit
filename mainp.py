@@ -193,27 +193,48 @@ def Interna():
 
     def main():
         st.title("Cargar Archivo Excel en Streamlit")
-        df = pd.read_excel("tabla_presupuesto.xlsx", engine='openpyxl')
+        df1 = pd.read_excel("tabla_presupuesto.xlsx", engine='openpyxl')
         st.write("Datos del archivo:")
-        st.write(df)
-        
-        def descargar_xlsx():
-            # Guardar el DataFrame en un archivo XLSX
-            df.to_excel('arc.xlsx', index=False)
-            # Devolver el contenido del archivo como bytes
+        df2=df1
+        st.write(df1)
+        def descargar_xlsx(df1, df2):
+            # Guardar los DataFrames en dos hojas de un archivo XLSX en memoria
+            #output = BytesIO()
+            #with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+            df1.to_excel('arc.xlsx', sheet_name='Hoja1', index=False)
+            df2.to_excel('arc.xlsx', sheet_name='Hoja2', index=False)
             with open('arc.xlsx', 'rb') as f:
                 return f.read()
+
+
+      
+        #def descargar_xlsx():
+            # Guardar el DataFrame en un archivo XLSX
+         #   df.to_excel('arc.xlsx', index=False)
+            # Devolver el contenido del archivo como bytes
+          #  with open('arc.xlsx', 'rb') as f:
+           #     return f.read()
         
         # Botón de descarga
-        if st.button("Descargar XLSX"):
-            archivo_xlsx = descargar_xlsx()
+        if st.button("Descargar XLSX con Dos Hojas"):
+            archivo_xlsx = descargar_xlsx(df1, df2)
             st.download_button(
                 label="Haz clic para descargar",
-                data=archivo_xlsx,
+                data=archivo_xlsx.read(),
                 key="archivo_xlsx",
                 file_name="archivo_excel.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             )
+            st.success("¡Descarga exitosa!")
+        #if st.button("Descargar XLSX"):
+         #   archivo_xlsx = descargar_xlsx()
+          #  st.download_button(
+           #     label="Haz clic para descargar",
+            #    data=archivo_xlsx,
+             #   key="archivo_xlsx",
+              #  file_name="archivo_excel.xlsx",
+               # mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            #)
 
       
     
