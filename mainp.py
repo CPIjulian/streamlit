@@ -197,14 +197,8 @@ def Interna():
         st.write("Datos del archivo:")
         df2=df1
         st.write(df1)
-        #def descargar_xlsx(df1, df2):
-            # Guardar los DataFrames en dos hojas de un archivo XLSX en memoria
-            #output = BytesIO()
-            #with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-         #   df1.to_excel('arc.xlsx', sheet_name='Hoja1', index=False)
-         #   df2.to_excel('arc.xlsx', sheet_name='Hoja2', index=False)
-         #   with open('arc.xlsx', 'rb') as f:
-         #       return f.read()
+     
+      
         def descargar_xlsx(df1, df2):
               # Guardar los DataFrames en dos hojas de un archivo XLSX en memoria
               output = BytesIO()
@@ -214,15 +208,6 @@ def Interna():
               output.seek(0)
               return output
 
-
-      
-        #def descargar_xlsx():
-            # Guardar el DataFrame en un archivo XLSX
-         #   df.to_excel('arc.xlsx', index=False)
-            # Devolver el contenido del archivo como bytes
-          #  with open('arc.xlsx', 'rb') as f:
-           #     return f.read()
-        
         if st.button("Descargar XLSX con Dos Hojas"):
               archivo_xlsx = descargar_xlsx(df1, df2)
               st.download_button(
@@ -233,17 +218,7 @@ def Interna():
                   mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
               )
               st.success("¡Descarga exitosa!")
-        #if st.button("Descargar XLSX"):
-         #   archivo_xlsx = descargar_xlsx()
-          #  st.download_button(
-           #     label="Haz clic para descargar",
-            #    data=archivo_xlsx,
-             #   key="archivo_xlsx",
-              #  file_name="archivo_excel.xlsx",
-               # mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            #)
-
-      
+        
     
     if __name__ == "__main__":
         main()
