@@ -6,7 +6,7 @@ pip.main(["install", "hydralit"])
 pip.main(["install", "openpyxl"])
 import hydralit_components as hc
 import io
-
+from io import BytesIO
 st.set_page_config(page_title= 'Reformas CPI',
                     page_icon='moneybag:',
                     layout='wide' )
